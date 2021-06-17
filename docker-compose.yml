@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  #############
+  ## SERVER ##
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    networks:
+      - webapp
+    environment:
+      - SECRET='¯\_(ツ)_/¯'
+    restart: always
+    command: ["node", "main.js"]
+    container_name: server
+  #############
+  ## CLIENT ##
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    networks:
+      - webapp
+    ports:
+      - 80:80
+    restart: always
+    container_name: client
+networks:
+  webapp:
+    driver: bridge
