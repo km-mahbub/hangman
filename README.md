@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This is a web app of a paper and pencil guessing game for two or more players. One player thinks of a word, phrase or sentence and the other(s) tries to guess it by suggesting letters within a certain number of guesses. In this app computer will choose a random word and the player will win if he/she can guess the correct word within limited number of tries. Otherwise, player will hang.
+This is a web app of a paper and pencil guessing game called Hangman. Player tries to guess a word by suggesting letters within a certain number of guesses. In this app computer will choose a random word and the player will win if he/she can guess the correct word within limited number of tries. Otherwise, the player will hang from tree!
 
 #### Stack
 
@@ -15,7 +15,7 @@ This is a web app of a paper and pencil guessing game for two or more players. O
 
 ### Prerequisites
 
-Make sure you have the below installed on your machine.
+Make sure you have the below package installed on your machine.
 
 - Docker
 - Docker-Compose
