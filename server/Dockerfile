@@ -10,7 +10,7 @@ RUN yarn build
 FROM node:12-alpine
 WORKDIR /app
 
-COPY --from=build /app/build /app/
+COPY --from=build /app/dist /app/
 COPY package.json /app/package.json
 
 RUN yarn --silent
