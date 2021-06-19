@@ -1,0 +1,13 @@
+.answerBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 50px;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.answer {
+  width: 30px;
+  text-align: center;
+  border-bottom: 3px #000000 solid;
+}

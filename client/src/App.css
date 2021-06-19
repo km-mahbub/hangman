@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  display: grid;
+  width: 100%;
+  height: 600px;
+  grid-template-rows: 100px 200px 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;
+  font-family: "Shadows Into Light", cursive;
+  color: #000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
+  transition: all 0.5s ease;
+}
+
+.title:hover {
+  font-size: 92px;
+  color: #b91717;
+}
+
+.letters {
+  padding: 20px 160px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+}
+
+.letterRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.gameBlock {
+  padding: 0px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.gameBlock .left {
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.letter {
+  text-align: center;
+  font-size: 48px;
+  font-family: "Shadows Into Light", cursive;
+  transition: all 0.5s ease;
+}
+
+.letter:hover {
+  font-size: 72px;
+}
+
+.stand {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.stand .base div {
+  width: 60px;
+  position: absolute;
+  bottom: 20px;
+  border: 2px #000 solid;
+}
+.stand .base .baseLeft {
+  left: 24px;
+  transform: rotate(-44deg);
+}
+.stand .base .baseRight {
+  left: 68px;
+  transform: rotate(44deg);
+}
+.stand .bracket div {
+  position: absolute;
+  border: 2px #000 solid;
+}
+.stand .bracket .bracketLeft {
+  height: 200px;
+  bottom: 44px;
+  left: 76px;
+}
+.stand .bracket .bracketTop {
+  width: 160px;
+  bottom: 248px;
+  left: 76px;
+}
+.stand .bracket .bracketRight {
+  height: 60px;
+  bottom: 188px;
+  left: 240px;
+}
+
+.person {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.person div {
+  border-width: 1px;
+  border-color: #000;
+  border-style: solid;
+  position: absolute;
+  transition: border-color 0.5s ease;
+}
+.person .head {
+  border-width: 2px;
+  top: 106px;
+  left: 218px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.person .body {
+  top: 154px;
+  left: 240px;
+  height: 60px;
+}
+.person .leftHand {
+  width: 40px;
+  top: 176px;
+  left: 204px;
+  transform: rotate(-44deg);
+}
+.person .rightHand {
+  width: 40px;
+  top: 176px;
+  left: 236px;
+  transform: rotate(44deg);
+}
+.person .leftFoot {
+  width: 40px;
+  top: 230px;
+  left: 208px;
+  transform: rotate(-56deg);
+}
+.person .rightFoot {
+  width: 40px;
+  top: 230px;
+  left: 232px;
+  transform: rotate(56deg);
+}
+.person .hiddenBorder {
+  border-color: #fff;
+}
+
+.figure {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.figureRoom {
+  width: 360px;
+  border-bottom: 4px #000 solid;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.restartBtn {
+  font-size: 32px;
+  height: 60px;
+  width: 100%;
+  background: #00000000;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-family: "Shadows Into Light", cursive;
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.restartBtn:hover {
+  font-size: 40px;
+  height: 70px;
+  background: #000;
+  color: #fff;
 }
