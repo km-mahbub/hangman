@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Answerbox } from "../components/answerBox/AnswerBox";
 import { Figure } from "../components/figure/Figure";
 import { Letter } from "../components/letter/Letter";
-import { Restartbutton } from "../components/restartButton/RestartButton";
+import { RestartButton } from "../components/restartButton/RestartButton";
+import { ResultWindow } from "../components/resultWindow/ResultWindow";
+import { IStore, IUpdateGameState } from "../types";
 import letters from "../utils/letters";
+import * as gameActions from "../redux/actions/game/actions";
 
 export const Game: React.FC = () => {
-  console.log(letters);
+  const dispatch = useDispatch();
+  const gameState = useSelector((state: IStore) => state.game);
+
   const handleLetterClick = (letter: string) => () => {
-    //updateAnsweredProgress(word);
+    const updateObject: IUpdateGameState = {
+      gameId: gameState.game.id,
+      letter: letter,
+    };
+    dispatch(gameActions.updateGameState(updateObject));
   };
+
   return (
     <>
       <div className="header">
@@ -39,7 +50,7 @@ export const Game: React.FC = () => {
         <Figure />
         <div className="left">
           <Answerbox />
-          <Restartbutton text="Restart" />
+          <RestartButton text="Restart" />
         </div>
       </div>
     </>

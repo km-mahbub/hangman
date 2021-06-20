@@ -1,12 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import * as gameActions from "../../redux/actions/game/actions";
 
-interface RestartbuttonProps {
+interface RestartButtonProps {
   text: string;
 }
 
-export const Restartbutton: React.FC<RestartbuttonProps> = ({ text }) => {
+export const RestartButton: React.FC<RestartButtonProps> = ({ text }) => {
+  const dispatch = useDispatch();
+
   return (
-    <button type="button" className="restartBtn">
+    <button
+      type="button"
+      className="restartBtn"
+      onClick={() => dispatch(gameActions.newGame())}
+    >
       {text}
     </button>
   );

@@ -3,5 +3,5 @@ export const arrayFindTarget = (array: string[], target: string): boolean => (
 );
 
 export default {
-  arrayFindTarget,
+  arrayFindTarget
 };

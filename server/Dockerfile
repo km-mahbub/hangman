@@ -12,6 +12,7 @@ WORKDIR /app
 
 COPY --from=build /app/dist /app/
 COPY package.json /app/package.json
+COPY wait-for-it.sh /app/wait-for-it.sh
 
 RUN yarn --silent
 RUN apk add --no-cache bash
