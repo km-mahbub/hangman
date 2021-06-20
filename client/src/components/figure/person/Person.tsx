@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { IStore } from "../../../types";
 
 export const Person: React.FC = () => {
+  const gameState = useSelector((state: IStore) => state.game);
+
   const getDisplayOfParts = (partType: string) => {
     const displaySortOfPart = [
       "initial",
@@ -12,8 +16,12 @@ export const Person: React.FC = () => {
       "rightFoot",
     ];
 
+    const isHiddenBorder = () =>
+      gameState.game.wrongLetters.length <
+      displaySortOfPart.findIndex((part) => part === partType);
+
     return `
-      hiddenBorder
+      ${isHiddenBorder() && "hiddenBorder"}
     `;
   };
 

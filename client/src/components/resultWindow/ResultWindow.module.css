@@ -1,0 +1,32 @@
+.resultContent {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  border: 2px solid #000000;
+  border-radius: 0.2em;
+  background: #ffffff;
+  padding: 0px 48px;
+}
+
+.resultWindow {
+  display: flex;
+  position: fixed;
+  background: #ffffff00;
+  width: 100%;
+  height: 100%;
+  top: calc(50% - 170px);
+  left: calc(50% - 320px);
+}
+
+.win {
+  color: #ff0000;
+}
+
+.lose {
+  color: #00ff00;
+}

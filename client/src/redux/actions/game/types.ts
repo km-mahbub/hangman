@@ -1,0 +1,14 @@
+export const CREATE_GAME = 'CREATE_GAME';
+export const UPDATE_GAME = 'UPDATE_GAME';
+export const GET_GAME = 'GET_GAME';
+
+export const CREATE_GAME_SUCCESS = 'CREATE_GAME_SUCCESS';
+export const UPDATE_GAME_SUCCESS = 'UPDATE_GAME_SUCCESS';
+export const GET_GAME_SUCCESS = 'GET_GAME_SUCCESS';
+
+export const CREATE_GAME_FAILED = 'CREATE_GAME_FAILED';
+export const UPDATE_GAME_FAILED = 'UPDATE_GAME_FAILED';
+export const GET_GAME_FAILED = 'GET_GAME_FAILED';
+
+export const LOADING_ON = 'LOADING_ON';
+export const LOADING_OFF = 'LOADING_OFF';
