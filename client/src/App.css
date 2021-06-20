@@ -8,7 +8,7 @@
 .content {
   display: grid;
   width: 100%;
-  height: 600px;
+  height: 500px;
   grid-template-rows: 100px 200px 300px;
 }
 
@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   font-size: 72px;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Monaco", cursive;
   color: #000;
 }
 
@@ -60,7 +60,7 @@
 .letter {
   text-align: center;
   font-size: 48px;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Monaco", cursive;
   transition: all 0.5s ease;
 }
 
@@ -114,7 +114,7 @@
 }
 .person div {
   border-width: 1px;
-  border-color: #000;
+  border-color: #fff;
   border-style: solid;
   position: absolute;
   transition: border-color 0.5s ease;
@@ -157,7 +157,7 @@
   transform: rotate(56deg);
 }
 .person .hiddenBorder {
-  border-color: #fff;
+  border-color: #22a892;
 }
 
 .figure {
@@ -177,7 +177,7 @@
   background: #00000000;
   border: 2px solid #000000;
   border-radius: 4px;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Monaco", cursive;
   transition: all 0.5s ease;
 }
 

@@ -43,8 +43,6 @@ services:
       - POSTGRES_DB=hangman
     volumes:
       - ./server/database/data/prod:/var/lib/postgresql/data/
-    ports:
-      - "5432:5432"
     restart: always
     container_name: postgres_db
 networks:

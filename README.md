@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This is a web app of a paper and pencil guessing game called Hangman. Player tries to guess a word by suggesting letters within a certain number of guesses. In this app computer will choose a random word and the player will win if he/she can guess the correct word within limited number of tries. Otherwise, the player will hang from tree!
+This is a web app of a popular paper and pencil guessing game called Hangman. Player tries to guess a word by selecting letters within a certain number of guesses. In this app computer will choose a random word and the player will win if he/she can guess the correct word within limited number of tries. Otherwise, the player will hang from tree!
 
 #### Stack
 
@@ -55,9 +55,7 @@ it will be served on `http://localhost:3000`
 To start the container in development mode, run the following command from project root folder.
 
 ```bash
-sudo docker-compose up
+sudo docker-compose up -d
 ```
 
-This will create build for both server and client, will serve client with nginx server on port 80 and client will communicate with server on port 5500 in the location /api.
-
-## Enjoy
+This will create build for both server and client, will serve client with nginx server on port 80 (`http://localhost`) and client will communicate with server on port 5500 in the location /api.

@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Answerbox } from "../components/answerBox/AnswerBox";
 import { Figure } from "../components/figure/Figure";
 import { Letter } from "../components/letter/Letter";
 import { RestartButton } from "../components/restartButton/RestartButton";
-import { ResultWindow } from "../components/resultWindow/ResultWindow";
 import { IStore, IUpdateGameState } from "../types";
 import letters from "../utils/letters";
 import * as gameActions from "../redux/actions/game/actions";

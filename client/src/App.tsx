@@ -15,16 +15,11 @@ function App() {
 
   useEffect(() => {
     dispatch(gameActions.getGameInfo());
-  }, []);
-
-  // if (gameState === "Game not found") {
-  //   dispatch(gameActions.newGame());
-  //   //console.log(gameState.err);
-  // }
+  }, [dispatch]);
 
   let body = null;
   if (gameState.game === null) {
-    body = <Loader />;
+    body = <div style={{ backgroundColor: "#22a892" }}>Loading...</div>;
   } else {
     if (gameState.game.completed) {
       body = (
