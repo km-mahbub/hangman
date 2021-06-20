@@ -1,5 +1,5 @@
 .resultContent {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Monaco";
   font-size: 52px;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
   border: 2px solid #000000;
   border-radius: 0.2em;
   background: #ffffff;
+  color: #000;
   padding: 0px 48px;
 }
 

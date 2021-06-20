@@ -19,7 +19,6 @@ export const gameReducer = (
         isLoading: true
       };
     case types.GET_GAME_SUCCESS:
-      console.log(`Game Reducer: ${JSON.stringify(action.payload)}`)
       return {
         ...state,
         isLoading: false,

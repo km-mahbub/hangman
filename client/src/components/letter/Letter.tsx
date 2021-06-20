@@ -10,7 +10,6 @@ interface LetterProps {
 
 export const Letter: React.FC<LetterProps> = ({ letter, clickEvent }) => {
   const gameState = useSelector((state: IStore) => state.game);
-  const question: string[] = gameState.game.word.split("");
   const correctAns: string[] = gameState.game.correctLetters.split("");
   const wrongAns: string[] = gameState.game.wrongLetters.split("");
 

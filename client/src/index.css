@@ -1,7 +1,8 @@
-body {
+body,
+#root {
   margin: 10px;
-  /* background-color: #2ad3b7;
-  color: #fff; */
+  background-color: #22a892;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif, "Shadows Into Light";

@@ -22,6 +22,7 @@ export class GameService {
   getGame = async (gameId: string): Promise<Game> => {
     try {
       const game: Game = await this.gameRepo.findOne({ id: gameId });
+      if (!game) throw new HttpException('Game not found', HttpStatus.NOT_FOUND);
       return game;
     } catch (error) {
       throw new HttpException('Game not found', HttpStatus.NOT_FOUND);
