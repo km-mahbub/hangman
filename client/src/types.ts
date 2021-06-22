@@ -23,6 +23,7 @@ export interface IGameState {
   game: Game;
   isLoading: boolean;
   err: any;
+  notification: boolean;
 }
 
 export interface IUpdateGameState {

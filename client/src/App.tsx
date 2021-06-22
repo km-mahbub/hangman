@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { Layout } from "./components/layout/Layout";
-import { Loader } from "./components/loader/Loader";
 import { Game } from "./pages/Game";
 import { IStore } from "./types";
 import * as gameActions from "./redux/actions/game/actions";
 import { ResultWindow } from "./components/resultWindow/ResultWindow";
+import { Spinner } from "./components/spinner/Spinner";
+import { Notification } from "./components/notification/Notification";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,8 +19,8 @@ function App() {
   }, [dispatch]);
 
   let body = null;
-  if (gameState.game === null) {
-    body = <div style={{ backgroundColor: "#22a892" }}>Loading...</div>;
+  if (gameState.isLoading === true) {
+    body = <Spinner loading={gameState.isLoading} />;
   } else {
     if (gameState.game.completed) {
       body = (
@@ -29,7 +30,12 @@ function App() {
       body = <Game />;
     }
   }
-  return <Layout>{body}</Layout>;
+  return (
+    <Layout>
+      {body}
+      <Notification />
+    </Layout>
+  );
 }
 
 export default App;

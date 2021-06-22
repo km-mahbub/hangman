@@ -23,6 +23,18 @@ const updateGame = () => {
   };
 };
 
+const showNotification = () => {
+  return {
+    type: types.SHOW_NOTIFICATION
+  };
+};
+
+const hideNotification = () => {
+  return {
+    type: types.HIDE_NOTIFICATION
+  };
+};
+
 
 const createGameSuccess = (data: any) => {
   return {
@@ -76,6 +88,10 @@ export const newGame = () => async (
     dispatch(createGameSuccess(res.data));
   } catch (err) {
     dispatch(catchCreateGameErr(err));
+    dispatch(showNotification());
+    setTimeout(() => {
+      dispatch(hideNotification());
+    }, 2000);
   }
 };
 
@@ -102,5 +118,9 @@ export const updateGameState = (updateGameState: IUpdateGameState) => async (dis
     dispatch(updateGameSuccess(res.data));
   } catch (err) {
     dispatch(catchUpdateGameErr(err));
+    dispatch(showNotification());
+    setTimeout(() => {
+      dispatch(hideNotification());
+    }, 2000);
   }
 }

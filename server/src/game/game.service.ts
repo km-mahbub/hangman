@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { Game } from './game.entity';
 import { Word } from '../shared/interfaces/word.interface';
 import { ReturnGameStateDTO, UpdateGameDTO } from './game.dto';
-import { arrayFindTarget, isWin } from 'src/shared/utils/arrayUtils';
+import { arrayFindTarget, getWordApiLink, isWin } from 'src/shared/utils/arrayUtils';
 
 @Injectable()
 export class GameService {
@@ -29,15 +29,19 @@ export class GameService {
     }
   };
 
-  getWord = async (): Promise<Word> => {
-    const response = await this.httpService.get('https://random-words-api.vercel.app/word').toPromise();
-    return response.data[0];
+  getWord = async (): Promise<string> => {
+    try {
+      const response = await this.httpService.get(getWordApiLink()).toPromise();
+      return response.data[0];
+    } catch (error) {
+      throw new HttpException('Word not found.', HttpStatus.NOT_FOUND);
+    }
   }
 
   createGame = async (): Promise<Game> => {
     const newGame = new Game();
-    const word: Word = await this.getWord();
-    newGame.word = word.word.toUpperCase();
+    const word: string = await this.getWord();
+    newGame.word = word.toUpperCase();
     await newGame.save();
 
     return newGame;
