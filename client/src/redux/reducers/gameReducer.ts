@@ -5,7 +5,8 @@ import { IGameState, Action } from '../../types';
 const initialState: IGameState = {
   game: null as any,
   isLoading: true,
-  err: null
+  err: null,
+  notification: false
 };
 
 export const gameReducer = (
@@ -29,7 +30,7 @@ export const gameReducer = (
       return {
         ...state,
         isLoading: false,
-        err: action.payload.err
+        err: action.payload
       };
     case types.CREATE_GAME:
       return {
@@ -47,12 +48,12 @@ export const gameReducer = (
       return {
         ...state,
         isLoading: false,
-        err: action.payload.err
+        err: action.payload
       };
     case types.UPDATE_GAME:
       return {
         ...state,
-        isLoading: true,
+        isLoading: false,
       };
     case types.UPDATE_GAME_SUCCESS:
       return {
@@ -65,7 +66,17 @@ export const gameReducer = (
       return {
         ...state,
         isLoading: false,
-        err: action.payload.err
+        err: action.payload
+      };
+    case types.SHOW_NOTIFICATION:
+      return {
+        ...state,
+        notification: true
+      };
+    case types.HIDE_NOTIFICATION:
+      return {
+        ...state,
+        notification: false
       };
     default:
       return state;
