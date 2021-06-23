@@ -52,7 +52,7 @@ it will be served on `http://localhost:3000`
 
 ### Production
 
-To start the container in development mode, run the following command from project root folder.
+To start the container in production mode, run the following command from project root folder.
 
 ```bash
 sudo docker-compose up -d
