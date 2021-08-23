@@ -5,7 +5,7 @@ export const getGameById = async (gameId: string) => {
   try {
     const res = await axios({
       method: 'GET',
-      url: `/hangman/api/game/${gameId}`
+      url: `/api/game/${gameId}`
     });
     return res;
   } catch (err) {
@@ -17,7 +17,7 @@ export const createGame = async () => {
   try {
     const res = await axios({
       method: 'POST',
-      url: '/hangman/api/game',
+      url: '/api/game',
     });
     return res;
   } catch (err) {
@@ -29,7 +29,7 @@ export const updateGameState = async (updateGame: IUpdateGameState) => {
   try {
     const res = await axios({
       method: 'PATCH',
-      url: '/hangman/api/game',
+      url: '/api/game',
       data: updateGame
     });
     return res;
